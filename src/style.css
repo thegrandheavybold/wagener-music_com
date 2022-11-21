@@ -623,6 +623,10 @@ strong {
   border-radius: 50% 50% 50% 50%/40% 40% 40% 40%;
 }
 
+.uc-partner-icon {
+  width: auto !important;
+}
+
 /*** Header */ /*** */
 header {
   margin: 0;
