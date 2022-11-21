@@ -1,0 +1,60 @@
+//Typography Import & Setup
+$font__regular: 'ivypresto-display', serif
+$font__bold: 'ivypresto-display', serif
+$font__code: 'ivypresto-display', serif
+$font__pre: 'ivypresto-display', serif
+$copy__regular: 'ff-nexus-typewriter', sans-serif
+$copy__italic: 'ff-nexus-typewriter', sans-serif
+$copy__bold: 'ff-nexus-typewriter', sans-serif
+
+@mixin font__regular
+	font-family: 'ivypresto-display', serif
+	font-weight: 100
+	font-style: normal
+
+@mixin font__bold
+	font-family: 'ivypresto-display', serif
+	font-weight: 400
+	font-style: normal
+
+@mixin font__code
+	font-family: 'ff-nexus-typewriter', sans-serif
+	font-weight: 400
+	font-style: italic
+
+@mixin font__pre
+	font-family: 'ff-nexus-typewriter', sans-serif
+	font-weight: 400
+	font-style: italic
+
+@mixin copy__regular
+	font-family: 'ff-nexus-typewriter', sans-serif
+	font-weight: 400
+	font-style: normal
+
+@mixin copy__italic
+	font-family: 'ff-nexus-typewriter', sans-serif
+	font-weight: 400
+	font-style: italic
+
+@mixin copy__bold
+	font-family: 'ff-nexus-typewriter', sans-serif
+	font-weight: 700
+	font-style: normal
+
+
+@mixin clearfix()
+	content: ""
+	display: table
+	table-layout: fixed
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after()
+	clear: both
+
+
+// Center block
+@mixin center-block
+	display: block
+	margin-left: auto
+	margin-right: auto

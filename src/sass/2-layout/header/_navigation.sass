@@ -1,0 +1,41 @@
+.menu
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background: $neon
+	transition: all ease .7s
+	transition-property: transform, opacity
+	z-index: -1
+	overflow-x: scroll
+
+.menu-toggle[aria-expanded= "false"] + .menu
+	transform: scale(0)
+	opacity: 0
+	visibility: hidden
+
+.menu-toggle[aria-expanded="true"] + .menu
+	transform: scale(1)
+	opacity: 1
+	visibility: visible
+
+
+.menu__content
+	display: flex
+	//height: 100%
+	justify-content: space-around
+	flex-wrap: wrap
+	align-content: center
+	padding: 15vw 0 0
+
+	.menu__items
+		display: flex
+		flex-direction: column
+		ul.menu__links
+			li
+				a
+					text-transform: capitalize
+					font-size: min(max(17vw), 81px)
+					line-height: min(max(21vw), 84px)
+					letter-spacing: -0.2rem

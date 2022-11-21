@@ -1,0 +1,31 @@
+h1, h2, h3, h4, h5, h6
+	@include font__regular
+	margin: 0 0 1vw 0
+	padding: 0
+	//overflow-wrap: break-word
+
+h1
+	font-size: 22vw
+	line-height: 21vw
+
+h2
+	font-size: 15vw
+	line-height: 20vw
+	@include font__bold
+	font-style: italic
+
+h3
+	font-size: min(max(7vw), 7vw)
+	line-height: min(max(8vw), 8vw)
+
+h4
+	font-size: min(max(6vw), 6vw)
+	line-height: min(max(7vw), 7vw)
+
+h5
+	font-size: min(max(6vw), 3rem)
+	line-height: min(max(7vw), 3.6rem)
+
+h6
+	font-size: min(max(5vw), 2rem)
+	line-height: min(max(6vw), 2.4rem)

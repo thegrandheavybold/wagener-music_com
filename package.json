@@ -1,0 +1,23 @@
+{
+  "name": "wagener-music_com",
+  "version": "1.0.0",
+  "description": "Website Hans Günter Wagener",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "watch": "eleventy --watch",
+    "debug": "DEBUG=*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  },
+  "dependencies": {
+    "gsap": "npm:@gsap/member@^3.11.3",
+    "moment": "^2.29.4",
+    "normalize.css": "^8.0.1"
+  }
+}

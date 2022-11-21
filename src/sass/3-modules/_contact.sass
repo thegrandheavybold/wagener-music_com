@@ -1,0 +1,45 @@
+section.contact
+  .item_3
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    transform: translateY(-12vw)
+    //margin-bottom: -12vw
+    p.intro
+      width: 55%
+      margin-top: 25vw
+      margin-left: -21vw
+
+    .credits_img
+      width: 620px
+      //height: 620px
+      display: block
+      transform: translateX(-35%)
+      position: relative
+      &::after
+        height: 100%
+        width: 620px
+        bottom: -20vw
+        left: -12vw
+      &::before
+        display: none
+
+  .item_4
+    display: flex
+    flex-direction: column
+    width: 70%
+    margin: 0 auto
+
+    h3:nth-of-type(1)
+      align-self: center
+      margin-bottom: 3vw
+    h3:nth-of-type(2)
+      align-self: flex-end
+
+  @media only screen and (max-width: 768px)
+    .item_3
+      p.intro
+        margin-left: -45vw
+
+      .credits_img
+        transform: translateX(-60%)

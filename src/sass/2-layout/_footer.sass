@@ -1,0 +1,41 @@
+footer
+  .wrapper
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+
+    .item_1
+      display: flex
+      flex-direction: row
+      width: 40%
+      justify-content: flex-start
+      li:first-of-type
+        margin-right: 5vw
+
+    .item_2
+      display: flex
+      flex-direction: row
+      width: 40%
+      justify-content: flex-end
+      li:first-of-type
+        margin-right: 5vw
+
+    .item_3
+      display: flex
+      width: 20%
+      justify-content: flex-end
+
+  @media only screen and (max-width: 720px)
+    .wrapper
+      justify-content: space-between
+      align-items: flex-end
+      .item_1, .item_2, .item_3
+        flex-direction: column
+        li
+          margin-right: 0 !important
+      .item_2
+        align-items: flex-end
+      .item_3
+        width: 100%
+        align-items: center
+        margin-top: 5vw

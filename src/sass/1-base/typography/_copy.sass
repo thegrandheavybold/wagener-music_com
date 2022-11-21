@@ -1,0 +1,45 @@
+p
+	@include copy__regular
+	font-size: min(max(4vw), 1.5rem)
+	line-height: min(max(7vw), 2.5rem)
+	margin-top: 0
+	margin-bottom: 0
+
+
+dfn, cite, em, i
+	font-style: italic
+
+
+blockquote
+	margin: 0 1.5em
+
+
+address
+	margin: 0 0 1.5em
+
+
+pre
+	background: $mid_gray
+	@include font__pre
+	margin-bottom: 1.6em
+	max-width: 100%
+	overflow: auto
+	padding: 1.6em
+
+
+code, kbd, tt, var
+	@include font__code
+
+
+abbr, acronym
+	border-bottom: 1px dotted $mid_gray
+	cursor: help
+
+
+mark, ins
+	background: $mid_gray
+	text-decoration: none
+
+
+strong
+	@include copy__bold
