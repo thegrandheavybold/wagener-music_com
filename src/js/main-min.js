@@ -9082,9 +9082,8 @@ ScrollTrigger.core = {
 };
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
-if (process.client) {
-  gsapWithCSS.registerPlugin(ScrollTrigger);
-}
+gsapWithCSS.registerPlugin(ScrollTrigger);
+
 
 
 //gsap scroll animations
