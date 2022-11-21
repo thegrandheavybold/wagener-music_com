@@ -946,6 +946,9 @@ section.hero h2 {
 }
 
 /*** impressions section */
+section.impressions {
+  display: none;
+}
 section.impressions ul {
   display: flex;
   flex-direction: row;
