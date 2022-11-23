@@ -4,7 +4,6 @@ import  ScrollTrigger  from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 
-
 //gsap scroll animations
 const scrolls_l = gsap.utils.toArray('.hxl');
 scrolls_l.forEach(hxl => {
@@ -42,8 +41,6 @@ oov.forEach(oov => {
     }
   })
 });
-
-
 
 //gsap skew scroll
 let proxy = { skew: 0 },

@@ -9082,13 +9082,10 @@ ScrollTrigger.core = {
 };
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
-gsapWithCSS.registerPlugin(ScrollTrigger);
+gsapWithCSS.registerPlugin(ScrollTrigger); //gsap scroll animations
 
-
-
-//gsap scroll animations
-const scrolls_l = gsapWithCSS.utils.toArray('.hxl');
-scrolls_l.forEach(hxl => {
+var scrolls_l = gsapWithCSS.utils.toArray('.hxl');
+scrolls_l.forEach(function (hxl) {
   gsapWithCSS.to(hxl, {
     xPercent: -200,
     scrollTrigger: {
@@ -9097,60 +9094,67 @@ scrolls_l.forEach(hxl => {
     }
   });
 });
-
-const scrolls_r = gsapWithCSS.utils.toArray('.hxr');
-scrolls_r.forEach(hxr => {
+var scrolls_r = gsapWithCSS.utils.toArray('.hxr');
+scrolls_r.forEach(function (hxr) {
   gsapWithCSS.to(hxr, {
-  xPercent: 200,
+    xPercent: 200,
     scrollTrigger: {
       trigger: hxr,
       scrub: 1.5
     }
   });
-});
+}); //gsap outofview imdb list items
 
-
-//gsap outofview imdb list items
-const oov = gsapWithCSS.utils.toArray('.oov');
-oov.forEach(oov => {
+var oov = gsapWithCSS.utils.toArray('.oov');
+oov.forEach(function (oov) {
   gsapWithCSS.from(oov, {
-  y: 150,
-  opacity: 0,
+    y: 150,
+    opacity: 0,
     scrollTrigger: {
       trigger: oov,
       scrub: 2,
       end: "bottom 90%"
     }
   });
-});
+}); //gsap skew scroll
 
-
-
-//gsap skew scroll
-let proxy = { skew: 0 },
-    skewSetter = gsapWithCSS.quickSetter(".skw", "skewY", "deg"), // fast
-    clamp = gsapWithCSS.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
+var proxy = {
+  skew: 0
+},
+    skewSetter = gsapWithCSS.quickSetter(".skw", "skewY", "deg"),
+    // fast
+clamp = gsapWithCSS.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
 
 ScrollTrigger.create({
-  onUpdate: (self) => {
-    let skew = clamp(self.getVelocity() / -300);
-    // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+  onUpdate: function onUpdate(self) {
+    var skew = clamp(self.getVelocity() / -300); // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+
     if (Math.abs(skew) > Math.abs(proxy.skew)) {
       proxy.skew = skew;
-      gsapWithCSS.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+      gsapWithCSS.to(proxy, {
+        skew: 0,
+        duration: 0.8,
+        ease: "power3",
+        overwrite: true,
+        onUpdate: function onUpdate() {
+          return skewSetter(proxy.skew);
+        }
+      });
     }
   }
-});
+}); // make the right edge "stick" to the scroll bar. force3D: true improves performance
 
-// make the right edge "stick" to the scroll bar. force3D: true improves performance
-gsapWithCSS.set(".skw", {transformOrigin: "right center", force3D: true});
+gsapWithCSS.set(".skw", {
+  transformOrigin: "right center",
+  force3D: true
+}); // gsap quote soft parallax
 
-
-// gsap quote soft parallax
-const lax = gsapWithCSS.utils.toArray('.lx');
-lax.forEach(lx => {
+var lax = gsapWithCSS.utils.toArray('.lx');
+lax.forEach(function (lx) {
   gsapWithCSS.to(lx, {
-  y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    y: function y(i, target) {
+      return -ScrollTrigger.maxScroll(window) * target.dataset.speed;
+    },
     scrollTrigger: {
       trigger: lx,
       scrub: 2
