@@ -971,6 +971,7 @@ section.hero {
 section.hero picture {
   position: inherit;
   z-index: 0;
+  filter: opacity(0.5);
 }
 section.hero h2 {
   position: absolute;
