@@ -439,6 +439,7 @@ a:hover, a:active {
   font-family: "ivypresto-display", serif;
   font-weight: 100;
   font-style: normal;
+  text-decoration: underline;
 }
 
 /*** lists */
