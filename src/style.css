@@ -944,6 +944,10 @@ section.credits .item_3 .credits_img::before {
 /*** IMDB Credit List */
 ul.imdb {
   transform: translateY(-19vw);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: flex-end;
 }
 ul.imdb li {
   display: flex;
@@ -952,7 +956,7 @@ ul.imdb li {
   margin: 5vw 0;
 }
 ul.imdb li span.year {
-  width: 20vw;
+  width: 5vw;
 }
 ul.imdb li span.title {
   width: 60vw;
@@ -971,7 +975,7 @@ section.hero {
 section.hero picture {
   position: inherit;
   z-index: 0;
-  filter: opacity(0.5);
+  filter: opacity(0.25);
 }
 section.hero h2 {
   position: absolute;
