@@ -534,6 +534,18 @@ h6 {
   line-height: min(6vw, 2.4rem);
 }
 
+@media only screen and (max-width: 454px) {
+  h1 {
+    font-size: 21vw;
+    line-height: 20vw;
+  }
+}
+@media only screen and (max-width: 355px) {
+  h1 {
+    font-size: 19vw;
+    line-height: 18vw;
+  }
+}
 /*** Copy */
 p {
   font-family: "ff-nexus-typewriter", sans-serif;
@@ -880,6 +892,11 @@ section.about .item_2 .about_img::before {
 section.about .about_copy {
   width: 70%;
 }
+@media only screen and (max-width: 455px) {
+  section.about .about_copy {
+    width: 100%;
+  }
+}
 
 /*** credits section */
 section.credits {
@@ -1049,4 +1066,9 @@ section.biography .vita {
 }
 section.biography .vita div {
   margin-bottom: 7vw;
+}
+@media only screen and (max-width: 455px) {
+  section.biography .vita {
+    width: 100%;
+  }
 }
