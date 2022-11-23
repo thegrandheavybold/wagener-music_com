@@ -953,10 +953,10 @@ ul.imdb li {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  margin: 2vw 0;
+  margin: 4vw 0;
 }
 ul.imdb li span.year {
-  width: 5vw;
+  width: 10vw;
 }
 ul.imdb li span.title {
   width: 60vw;
@@ -965,6 +965,11 @@ ul.imdb li span.title h3 {
   margin: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  ul.imdb {
+    width: 100%;
+  }
+}
 /*** hero section */
 section.hero {
   width: 100vw;
