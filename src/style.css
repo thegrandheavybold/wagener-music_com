@@ -765,7 +765,7 @@ footer .wrapper {
   flex-wrap: wrap;
 }
 footer .wrapper .item_1 {
-  display: flex;
+  display: none;
   flex-direction: row;
   width: 40%;
   justify-content: flex-start;
