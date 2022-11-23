@@ -953,7 +953,7 @@ ul.imdb li {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  margin: 5vw 0;
+  margin: 2vw 0;
 }
 ul.imdb li span.year {
   width: 5vw;
