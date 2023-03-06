@@ -385,6 +385,16 @@ template {
   object-fit: cover;
 }
 
+/*** Orb canvas */
+canvas.orb-canvas {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
 /*** elements */
 html,
 body {
@@ -420,7 +430,7 @@ figure {
 }
 
 section {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 img {
@@ -450,7 +460,25 @@ a:hover, a:active {
   font-family: "ivypresto-display", serif;
   font-weight: 100;
   font-style: normal;
-  text-decoration: underline;
+  position: relative;
+}
+.tel::before, .mail::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: 10px;
+  left: 0;
+  background-color: #E2FD36;
+  visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all ease 0.7s;
+  will-change: transform, visibility;
+}
+.tel:hover::before, .mail:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 /*** lists */
@@ -623,34 +651,44 @@ strong {
   max-width: 100%;
   height: auto;
 }
-.rnd_img::after {
-  content: "";
-  display: block;
-  border: solid 2px #E2FD36;
-  border-radius: 50% 50% 50% 50%/40% 40% 40% 40%;
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-}
-.rnd_img::before {
-  content: "";
-  display: block;
-  border: solid 2px #E2FD36;
-  border-radius: 50% 50% 50% 50%/40% 40% 40% 40%;
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-}
 .rnd_img picture img {
   object-fit: cover;
   overflow: hidden;
   border-radius: 50% 50% 50% 50%/40% 40% 40% 40%;
+}
+.rnd_img svg:nth-of-type(1) {
+  position: absolute;
+  top: 5%;
+  left: -60%;
+}
+.rnd_img svg:nth-of-type(2) {
+  position: absolute;
+  top: 15%;
+  right: -90%;
 }
 
 .uc-partner-icon {
   width: auto !important;
 }
 
+#oval {
+  stroke: #E2FD36;
+  stroke-width: 2;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .rnd_img svg:nth-of-type(1) {
+    width: 80vw;
+    top: -40vh;
+    left: -40vw;
+  }
+  .rnd_img svg:nth-of-type(2) {
+    width: 80vw;
+    top: -10vh;
+    right: -60vw;
+  }
+}
 /*** Header */ /*** */
 header {
   margin: 0;
@@ -875,9 +913,6 @@ footer .wrapper .item_3 {
 }
 
 /*** about section */
-section.about {
-  background: #C3C3C3;
-}
 section.about .item_1 h1 {
   margin-bottom: -10vw;
 }
@@ -888,18 +923,7 @@ section.about .item_2 .about_img {
   width: 820px;
   display: block;
   margin: 0 auto;
-}
-section.about .item_2 .about_img::after {
-  width: 820px;
-  height: 100%;
-  bottom: -12vw;
-  left: -33vw;
-}
-section.about .item_2 .about_img::before {
-  width: 820px;
-  height: 100%;
-  bottom: -22vw;
-  right: -55vw;
+  transform: translateY(5vw);
 }
 section.about .about_copy {
   width: 70%;
@@ -928,17 +952,11 @@ section.credits .item_3 p.intro {
 section.credits .item_3 .credits_img {
   width: 620px;
   display: block;
-  transform: translateX(35%);
+  transform: translate(35%, 5vw);
   position: relative;
 }
-section.credits .item_3 .credits_img::after {
-  height: 100%;
-  width: 620px;
-  bottom: -12vw;
-  left: -18vw;
-}
-section.credits .item_3 .credits_img::before {
-  display: none;
+section.credits .item_3 .credits_img svg {
+  width: 110%;
 }
 
 /*** IMDB Credit List */
@@ -956,7 +974,7 @@ ul.imdb li {
   margin: 4vw 0;
 }
 ul.imdb li span.year {
-  width: 10vw;
+  width: 40px;
 }
 ul.imdb li span.title {
   width: 60vw;
@@ -1017,17 +1035,13 @@ section.contact .item_3 p.intro {
 section.contact .item_3 .credits_img {
   width: 620px;
   display: block;
-  transform: translateX(-35%);
+  transform: translate(-35%, 5vw);
   position: relative;
 }
-section.contact .item_3 .credits_img::after {
-  height: 100%;
-  width: 620px;
-  bottom: -20vw;
-  left: -12vw;
-}
-section.contact .item_3 .credits_img::before {
-  display: none;
+section.contact .item_3 .credits_img svg {
+  width: 110%;
+  left: 0;
+  top: 10%;
 }
 section.contact .item_4 {
   display: flex;
@@ -1049,6 +1063,11 @@ section.contact .item_4 h3:nth-of-type(2) {
   section.contact .item_3 .credits_img {
     transform: translateX(-60%);
   }
+  section.contact .item_3 .credits_img svg {
+    width: 80vw;
+    top: -20vh;
+    left: 20vw;
+  }
 }
 
 /*** Stage */
@@ -1056,12 +1075,13 @@ section.stage {
   height: 100vh;
   width: 100vw;
   display: flex;
+  overflow: hidden;
 }
 section.stage h1 {
-  margin-top: 15vw;
   margin-left: 10vw;
   position: relative;
   z-index: 5;
+  align-self: center;
 }
 section.stage picture img {
   width: 150vw;

@@ -16,8 +16,13 @@
     "@11ty/eleventy": "^1.0.2"
   },
   "dependencies": {
-    "gsap": "npm:@gsap/member@^3.11.3",
+    "@pixi/filter-kawase-blur": "^5.0.0",
+    "debounce": "^1.2.1",
+    "gsap": "npm:@gsap/shockingly@^3.11.3",
+    "hsl-to-hex": "^1.0.0",
     "moment": "^2.29.4",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "pixi.js": "^7.0.4",
+    "simplex-noise": "^4.0.1"
   }
 }

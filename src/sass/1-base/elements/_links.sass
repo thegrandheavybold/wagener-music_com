@@ -19,4 +19,21 @@ a
 
 .tel, .mail
 	@include font__regular
-	text-decoration: underline
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 6px
+		bottom: 10px
+		left: 0
+		background-color: $neon
+		visibility: hidden
+		transform: scaleX(0)
+		transform-origin: left
+		transition: all ease .7s
+		will-change: transform, visibility
+
+	&:hover::before
+		visibility: visible
+		transform: scaleX(1)

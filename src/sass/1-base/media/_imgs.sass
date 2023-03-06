@@ -3,7 +3,7 @@
   position: relative
   max-width: 100%
   height: auto
-  &::after
+  //&::after
     content: ''
     display: block
     border: solid 2px $neon
@@ -11,7 +11,7 @@
     position: absolute
     max-width: 100%
     max-height: 100%
-  &::before
+  //&::before
     content: ''
     display: block
     border: solid 2px $neon
@@ -25,6 +25,31 @@
       overflow: hidden
       border-radius: 50% 50% 50% 50% / 40% 40% 40% 40%
 
+  svg:nth-of-type(1)
+    position: absolute
+    top: 5%
+    left: -60%
+  svg:nth-of-type(2)
+    position: absolute
+    top: 15%
+    right: -90%
 
 .uc-partner-icon
   width: auto !important
+
+#oval
+  stroke: $neon
+  stroke-width: 2
+  width: 100%
+
+
+@media only screen and (max-width: 768px)
+  .rnd_img
+    svg:nth-of-type(1)
+      width: 80vw
+      top: -40vh
+      left: -40vw
+    svg:nth-of-type(2)
+      width: 80vw
+      top: -10vh
+      right: -60vw
