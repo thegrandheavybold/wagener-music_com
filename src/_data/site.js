@@ -4,8 +4,7 @@ module.exports = {
   name: "Hans Günter Wagener",
   author: "Christian Kriegsheim",
   authorTwitter: "",
-  metaImage: "",
-  //buildTime: new Date(),
+  metaImage: "https://www.wagener-music.com/assets/img/hans-guenter-wagener.png",
   metaTitle: "Hans Günter Wagener",
-  metaDescription: "Hans Günter Wagener is a componist & musican"
+  metaDescription: "Hans Günter Wagener ist einer der erfolgreichsten Filmkomponisten in Deutschland – seit mehr als 30 Jahren."
 };
