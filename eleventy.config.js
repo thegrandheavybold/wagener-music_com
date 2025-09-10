@@ -1,14 +1,16 @@
-module.exports = function(eleventyConfig) {
+import moment from "moment";
 
-  const moment = require("moment");
+import picture from "./src/js/picture.js";
 
-  eleventyConfig.addPassthroughCopy("./src/js/main-min.js");
+export default async function(eleventyConfig) {
+
+	eleventyConfig.addPassthroughCopy("./src/js/main-min.js");
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/style.css");
 
 
-  // A responsive image helper using Netlify Large Media - image transformation
-  eleventyConfig.addShortcode("picture", require("./src/js/picture.js"));
+  // Shortcodes for Pictures
+  eleventyConfig.addShortcode("picture", picture);
 
 
   //©copyrights year output

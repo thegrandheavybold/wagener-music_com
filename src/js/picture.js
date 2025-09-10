@@ -1,11 +1,21 @@
 // Generate an picture tag with image src URLs which use Neltify image transforms
-
-module.exports = (ImageName, ImageAlt) => {
+export default function picture(ImageName, ImageAlt) {
   return `<picture>
-            <source srcset="/assets/img/${ImageName}" media="(min-width: 1025px)">
-            <source srcset="/assets/img/${ImageName}?nf_resize=fit&w=1024" media="(min-width: 769px)">
-            <source srcset="/assets/img/${ImageName}?nf_resize=fit&w=768" media="(min-width: 481px)">
+            <img
+              srcset="
+                /assets/img/200/${ImageName}   200w,
+                /assets/img/400/${ImageName}   400w,
+                /assets/img/800/${ImageName}   800w,
+                /assets/img/1600/${ImageName} 1200w"
 
-            <img src="/assets/img/${ImageName}?nf_resize=fit&w=480" alt="${ImageAlt}" />
+              sizes=" 
+                (max-width: 450px) 200px,
+                (max-width: 850px) 400px,
+                (max-width: 1000px) 800px,
+                1200px"
+
+              src="/assets/img/1600/${ImageName}"
+              alt="${ImageAlt}"
+            />
           </picture>`;
-};
+}

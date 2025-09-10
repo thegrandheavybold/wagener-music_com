@@ -2,7 +2,8 @@
   "name": "wagener-music_com",
   "version": "1.0.0",
   "description": "Website Hans Günter Wagener",
-  "main": ".eleventy.js",
+  "main": "eleventy.config.js",
+  "type": "module",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
@@ -13,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0"
+    "@11ty/eleventy": "^3.1.2"
   },
   "dependencies": {
     "@pixi/filter-kawase-blur": "^5.0.0",
